@@ -16,49 +16,64 @@ class VCMaps: UIViewController {
     var localizacion = MKPointAnnotation ()
     
     @IBOutlet weak var miSegmento: UISegmentedControl!
-    
-  
-    
-    @IBOutlet weak var miBotonMas: UIButton!
-    @IBOutlet weak var miBotonMenos: UIButton!
-    
     @IBOutlet weak var miMapa: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //DAR COORDENADAS
-              miMapa.centerCoordinate = CLLocationCoordinate2D (latitude: 40.294667716603314, longitude: -3.745422365198801)
-              
-              //AÑADIR UN PUNTO DE LOCALIZACION AL MAPA
-              let localizacion = MKPointAnnotation()
-              localizacion.coordinate = CLLocationCoordinate2D (latitude: 40.294667716603314, longitude: -3.745422365198801)
-              localizacion.title = "soy YO"
-              
-              //AÑADIR LOCALIZACION AL MAPA
-              miMapa.addAnnotation(localizacion)
-              
-              //CREAR REGION COMO PARAMETROS ESPECIFICOS
-              let region = MKCoordinateRegion(center: localizacion.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
-              
-              //AÑADIR REGION AL MAPA
-              miMapa.setRegion(region, animated:true)
-              
-              miMapa.mapType = .satellite
-    }
-    
+        //dar unas cordenadadas
+         miMapa.centerCoordinate = CLLocationCoordinate2D(latitude: 40.293764032, longitude: -3.745153535)
+         
+         //Añadir un punto de localizacion al pmapa
+         
+         localizacion.coordinate = CLLocationCoordinate2D(latitude: 40.293764032, longitude: -3.745153535)
+         localizacion.title = "SOY YO"
+         
+         //Añadir localizacion al mapa
+         miMapa.addAnnotation(localizacion)
+         
+        
+         
+         //crear región con parametros especificos
+         region = MKCoordinateRegion(center: localizacion.coordinate, latitudinalMeters: 100, longitudinalMeters: 100)
+         
+         //Añadir region al mapa
+         miMapa.setRegion(region, animated: true)
+         
+         miMapa.mapType = .satellite
+     
+     
+     }
+
     
     @IBAction func btnMasAction(_ sender: Any) {
+        if latitudMetros >= 5000 && longitudMetros >= 5000 {
+            latitudMetros += 50
+            longitudMetros += 50
+        }
+     
+        let nuevaMas = MKCoordinateRegion(center: localizacion.coordinate, latitudinalMeters: CLLocationDistance(exactly: latitudMetros)!, longitudinalMeters: CLLocationDistance(exactly: longitudMetros)!)
+               
+        miMapa.setRegion(nuevaMas, animated: true)
     }
     
     @IBAction func btnMenosAction(_ sender: Any) {
+        if latitudMetros >= 0 && longitudMetros >= 0 {
+            latitudMetros -= 50
+            longitudMetros -= 50
+        }
         
+        let nuevaMenos = MKCoordinateRegion(center: localizacion.coordinate, latitudinalMeters: CLLocationDistance(exactly: latitudMetros)!, longitudinalMeters: CLLocationDistance(exactly: longitudMetros)!)
+     
+        //Añadir region al mapa
+        miMapa.setRegion(nuevaMenos, animated: true)
     }
     
     @IBAction func miSegmentoAction(_ sender: Any) {
         
         if miSegmento.selectedSegmentIndex == 0 {
             miMapa.mapType = .satellite
-            print("satelite")
+            print("Satelite")
         } else
         if miSegmento.selectedSegmentIndex == 1 {
             miMapa.mapType = .standard
