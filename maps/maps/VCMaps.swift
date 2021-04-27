@@ -9,9 +9,18 @@ import UIKit
 import MapKit
 
 class VCMaps: UIViewController {
+    var latitudMetros = 100
+    var longitudMetros = 100
     
+    var region = MKCoordinateRegion()
+    var localizacion = MKPointAnnotation ()
     
     @IBOutlet weak var miSegmento: UISegmentedControl!
+    
+  
+    
+    @IBOutlet weak var miBotonMas: UIButton!
+    @IBOutlet weak var miBotonMenos: UIButton!
     
     @IBOutlet weak var miMapa: MKMapView!
     override func viewDidLoad() {
@@ -37,10 +46,27 @@ class VCMaps: UIViewController {
               miMapa.mapType = .satellite
     }
     
-
+    
+    @IBAction func btnMasAction(_ sender: Any) {
+    }
+    
+    @IBAction func btnMenosAction(_ sender: Any) {
+        
+    }
+    
     @IBAction func miSegmentoAction(_ sender: Any) {
         
-       
+        if miSegmento.selectedSegmentIndex == 0 {
+            miMapa.mapType = .satellite
+            print("satelite")
+        } else
+        if miSegmento.selectedSegmentIndex == 1 {
+            miMapa.mapType = .standard
+            print("Standar")
+        }else  {
+            miMapa.mapType = .hybrid
+            print("Hibrido")
+        }
     }
     /*
     // MARK: - Navigation

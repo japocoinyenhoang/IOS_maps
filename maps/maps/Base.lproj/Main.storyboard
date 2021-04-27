@@ -62,10 +62,16 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXt-yh-Ofd">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="100"/>
                                                 <state key="normal" title="Button" image="plus.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="btnMasAction:" destination="lJa-Zl-J6w" eventType="touchUpInside" id="luw-Hj-rBU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxs-Wz-K0c">
                                                 <rect key="frame" x="207" y="0.0" width="207" height="100"/>
                                                 <state key="normal" title="Button" image="minus.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="btnMenosAction:" destination="lJa-Zl-J6w" eventType="touchUpInside" id="uNd-I4-2oY"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -91,6 +97,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnMasAction" destination="3Qv-py-Uz8" id="q3p-KM-E0h"/>
+                        <outlet property="miBotonMas" destination="UXt-yh-Ofd" id="0R7-mh-WJU"/>
+                        <outlet property="miBotonMenos" destination="Jxs-Wz-K0c" id="LQQ-uP-rto"/>
                         <outlet property="miMapa" destination="GsC-TE-eop" id="TVT-6y-mOG"/>
                         <outlet property="miSegmento" destination="Jna-Co-x2h" id="fyK-zn-kAK"/>
                     </connections>
