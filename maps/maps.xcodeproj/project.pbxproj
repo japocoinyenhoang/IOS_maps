@@ -15,6 +15,7 @@
 		B208AB832638766F00DAD205 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B208AB812638766F00DAD205 /* LaunchScreen.storyboard */; };
 		B208AB8E2638766F00DAD205 /* mapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208AB8D2638766F00DAD205 /* mapsTests.swift */; };
 		B208AB992638766F00DAD205 /* mapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208AB982638766F00DAD205 /* mapsUITests.swift */; };
+		B208ABAA2638776000DAD205 /* VCMaps.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208ABA92638776000DAD205 /* VCMaps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B208AB942638766F00DAD205 /* mapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B208AB982638766F00DAD205 /* mapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsUITests.swift; sourceTree = "<group>"; };
 		B208AB9A2638766F00DAD205 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B208ABA92638776000DAD205 /* VCMaps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMaps.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				B208AB7F2638766F00DAD205 /* Assets.xcassets */,
 				B208AB812638766F00DAD205 /* LaunchScreen.storyboard */,
 				B208AB842638766F00DAD205 /* Info.plist */,
+				B208ABA92638776000DAD205 /* VCMaps.swift */,
 			);
 			path = maps;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B208AB7B2638766E00DAD205 /* ViewController.swift in Sources */,
+				B208ABAA2638776000DAD205 /* VCMaps.swift in Sources */,
 				B208AB772638766E00DAD205 /* AppDelegate.swift in Sources */,
 				B208AB792638766E00DAD205 /* SceneDelegate.swift in Sources */,
 			);
